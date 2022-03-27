@@ -83,6 +83,7 @@ if(SDLSOUND_DECODER_VORBIS AND LIBM_LIBRARY AND NOT HAVE_SDL_EXP)
 endif()
 
 if(APPLE)
+    cmake_policy(SET CMP0068 OLD)
     sdlsound_decoder_option(COREAUDIO "CoreAudio" "various audio formats" TRUE)
     if(SDLSOUND_DECODER_COREAUDIO)
         set(OPTIONAL_LIBRARY_LIBS ${OPTIONAL_LIBRARY_LIBS} "-framework AudioToolbox")
